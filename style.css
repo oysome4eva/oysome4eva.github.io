@@ -80,6 +80,10 @@ img {
   overflow: hidden;
 }
 
+.hero-compact {
+  min-height: auto;
+}
+
 .site-nav,
 .hero-content,
 .section,
@@ -153,6 +157,15 @@ h1 {
   gap: 3.5rem;
   align-items: center;
   padding-block: 4.5rem 6rem;
+}
+
+.hero-content-single {
+  grid-template-columns: 1fr;
+  padding-bottom: 4rem;
+}
+
+.policy-hero-copy {
+  max-width: 46rem;
 }
 
 .eyebrow,
@@ -362,12 +375,23 @@ h2 {
   min-height: 190px;
   display: grid;
   place-items: center;
-  font-family: "Orbitron", sans-serif;
-  font-size: 0.92rem;
-  letter-spacing: 0.14em;
+  padding: 1.25rem;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
     linear-gradient(160deg, rgba(4, 7, 14, 0.4), rgba(4, 7, 14, 0.8));
+}
+
+.game-icon {
+  width: 100%;
+  max-width: 128px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(89, 208, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .neon-blue {
@@ -386,6 +410,12 @@ h2 {
 .support-card,
 .cta-card {
   padding: 1.7rem;
+}
+
+.game-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
 h3 {
@@ -416,12 +446,23 @@ h3 {
   font-weight: 700;
 }
 
+.game-link {
+  width: 100%;
+  margin-top: auto;
+  padding-inline: 1rem;
+  text-align: center;
+}
+
 .cta-card {
   border-radius: var(--radius);
   text-align: center;
   padding-block: 2.2rem;
   max-width: 52rem;
   margin: 0 auto;
+}
+
+.cta-card .button {
+  margin-top: 1.25rem;
 }
 
 .support-card {
@@ -442,8 +483,102 @@ h3 {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.4rem;
+}
+
 body.nav-open {
   overflow: hidden;
+}
+
+.policy-shell {
+  padding-top: 4.5rem;
+}
+
+.policy-layout {
+  display: block;
+  max-width: 54rem;
+  margin: 0 auto;
+}
+
+.policy-card {
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, rgba(20, 30, 52, 0.6), rgba(10, 15, 27, 0.92)),
+    var(--bg-elevated);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(10px);
+}
+
+.policy-card {
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+
+.policy-header {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.policy-section + .policy-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.policy-section h3,
+.policy-section h4 {
+  font-family: "Rajdhani", sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.policy-section h3 {
+  font-size: 1.45rem;
+  margin: 0 0 0.85rem;
+}
+
+.policy-section h4 {
+  font-size: 1.12rem;
+  margin: 1.25rem 0 0.5rem;
+  color: var(--text);
+}
+
+.policy-section p,
+.policy-numbered-list,
+.policy-link-list {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.policy-section p + p,
+.policy-section ul + p,
+.policy-section ol + p {
+  margin-top: 0.85rem;
+}
+
+.policy-numbered-list,
+.policy-link-list {
+  padding-left: 1.25rem;
+}
+
+.policy-numbered-list li + li,
+.policy-link-list li + li {
+  margin-top: 0.65rem;
+}
+
+.policy-link-list a,
+.policy-section a {
+  color: var(--accent-alt);
+}
+
+.policy-actions {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 /* Responsive adjustments for tablets and phones. */
@@ -451,7 +586,8 @@ body.nav-open {
   .hero-content,
   .about-grid,
   .games-grid,
-  .support-grid {
+  .support-grid,
+  .policy-layout {
     grid-template-columns: 1fr;
   }
 
@@ -467,6 +603,7 @@ body.nav-open {
   .hero-visual {
     min-height: 360px;
   }
+
 }
 
 @media (max-width: 700px) {
@@ -527,6 +664,14 @@ body.nav-open {
   .site-footer {
     flex-direction: column;
     text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  .policy-card {
+    padding: 1.4rem;
   }
 }
 
