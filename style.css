@@ -103,16 +103,31 @@ img {
   backdrop-filter: blur(16px);
 }
 
-.brand,
 h1 {
   font-family: "Orbitron", sans-serif;
 }
 
 .brand {
-  font-size: 0.98rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  width: clamp(9.75rem, 18vw, 12.5rem);
+  height: auto;
+  filter:
+    drop-shadow(0 12px 24px rgba(0, 0, 0, 0.34))
+    drop-shadow(0 0 16px rgba(89, 208, 255, 0.1));
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.brand:hover .brand-logo,
+.brand:focus-visible .brand-logo {
+  transform: translateY(-1px);
+  filter:
+    drop-shadow(0 16px 28px rgba(0, 0, 0, 0.36))
+    drop-shadow(0 0 18px rgba(89, 208, 255, 0.18));
 }
 
 .nav-links {
@@ -166,6 +181,30 @@ h1 {
 
 .policy-hero-copy {
   max-width: 46rem;
+}
+
+.hero-copy {
+  max-width: 38rem;
+}
+
+.hero-brand-lockup {
+  margin-bottom: 1.4rem;
+}
+
+.hero-logo {
+  width: min(100%, clamp(18rem, 42vw, 31rem));
+  height: auto;
+  filter:
+    drop-shadow(0 18px 35px rgba(0, 0, 0, 0.34))
+    drop-shadow(0 0 24px rgba(89, 208, 255, 0.18));
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.hero-logo:hover {
+  transform: translateY(-2px);
+  filter:
+    drop-shadow(0 22px 40px rgba(0, 0, 0, 0.36))
+    drop-shadow(0 0 28px rgba(89, 208, 255, 0.24));
 }
 
 .eyebrow,
@@ -476,6 +515,7 @@ h3 {
 
 .site-footer {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
   padding-block: 1.75rem 2.75rem;
@@ -483,10 +523,51 @@ h3 {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.footer-logo {
+  width: clamp(7rem, 12vw, 9rem);
+  height: auto;
+  opacity: 0.94;
+  filter:
+    drop-shadow(0 10px 22px rgba(0, 0, 0, 0.28))
+    drop-shadow(0 0 14px rgba(89, 208, 255, 0.08));
+  transition: opacity 0.2s ease, filter 0.2s ease, transform 0.2s ease;
+}
+
+.footer-brand:hover .footer-logo,
+.footer-brand:focus-visible .footer-logo {
+  opacity: 1;
+  transform: translateY(-1px);
+  filter:
+    drop-shadow(0 12px 24px rgba(0, 0, 0, 0.3))
+    drop-shadow(0 0 16px rgba(89, 208, 255, 0.14));
+}
+
+.footer-meta {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  flex: 1;
+  gap: 1rem;
+}
+
+.footer-meta p {
+  margin: 0;
+  text-align: center;
+  grid-column: 2;
+}
+
 .footer-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem 1.4rem;
+  gap: 1rem;
+  justify-content: flex-end;
+  grid-column: 3;
 }
 
 body.nav-open {
@@ -600,6 +681,10 @@ body.nav-open {
     padding-top: 2.5rem;
   }
 
+  .hero-copy {
+    max-width: 100%;
+  }
+
   .hero-visual {
     min-height: 360px;
   }
@@ -614,9 +699,17 @@ body.nav-open {
   }
 
   .site-nav {
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
+  }
+
+  .brand {
+    max-width: calc(100% - 4.5rem);
+  }
+
+  .brand-logo {
+    width: min(100%, 10.5rem);
   }
 
   .nav-toggle {
@@ -649,6 +742,14 @@ body.nav-open {
     font-size: clamp(2.5rem, 12vw, 3.4rem);
   }
 
+  .hero-brand-lockup {
+    margin-bottom: 1.1rem;
+  }
+
+  .hero-logo {
+    width: min(100%, 20rem);
+  }
+
   .tagline,
   .game-card-content p,
   .support-card p,
@@ -663,7 +764,18 @@ body.nav-open {
 
   .site-footer {
     flex-direction: column;
+    align-items: center;
     text-align: center;
+  }
+
+  .footer-logo {
+    width: min(100%, 8rem);
+  }
+
+  .footer-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-links {

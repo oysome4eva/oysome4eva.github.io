@@ -14,12 +14,23 @@
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;500;700&display=swap"
     rel="stylesheet"
   >
+  <!-- Favicon (reuse this block in all pages) -->
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/branding/oysome-logo-favicon.png">
+  <link rel="icon" href="./assets/branding/oysome-logo-favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="hero hero-compact" id="top">
     <nav class="site-nav">
-      <a class="brand" href="index.html">OYSome 4Eva</a>
+      <a class="brand" href="index.html" aria-label="OYSome 4Eva home">
+        <img
+          src="assets/branding/oysome-logo-horizontal.png"
+          alt="OYSome 4Eva"
+          class="brand-logo"
+          fetchpriority="high"
+          decoding="async"
+        >
+      </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -328,10 +339,20 @@
   </main>
 
   <footer class="site-footer">
-    <p>&copy; <span id="year"></span> OYSome 4Eva. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
+    <a class="footer-brand" href="index.html" aria-label="OYSome 4Eva home">
+      <img
+        src="assets/branding/oysome-logo-horizontal.png"
+        alt="OYSome 4Eva"
+        class="footer-logo"
+        loading="lazy"
+        decoding="async"
+      >
+    </a>
+    <div class="footer-meta">
+      <p>&copy; <span id="year"></span> OYSome 4Eva. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
     </div>
   </footer>
 

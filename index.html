@@ -14,13 +14,24 @@
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;500;700&display=swap"
     rel="stylesheet"
   >
+  <!-- Favicon (reuse this block in all pages) -->
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/branding/oysome-logo-favicon.png">
+  <link rel="icon" href="./assets/branding/oysome-logo-favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Hero and primary navigation -->
   <header class="hero" id="top">
     <nav class="site-nav">
-      <a class="brand" href="#top">OYSome 4Eva</a>
+      <a class="brand" href="index.html" aria-label="OYSome 4Eva home">
+        <img
+          src="assets/branding/oysome-logo-horizontal.png"
+          alt="OYSome 4Eva"
+          class="brand-logo"
+          fetchpriority="high"
+          decoding="async"
+        >
+      </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -37,7 +48,14 @@
     <section class="hero-content">
       <div class="hero-copy">
         <p class="eyebrow">Indie Mobile Games</p>
-        <h1>OYSome 4Eva</h1>
+        <div class="hero-brand-lockup">
+          <img
+            src="assets/branding/oysome-logo.webp"
+            alt="OYSome 4Eva"
+            class="hero-logo"
+            decoding="async"
+          >
+        </div>
         <p class="tagline">
           Fast-paced mobile gaming experiences built for players who love challenge,
           style, and quick fun on the go.
@@ -239,10 +257,20 @@
 
   <!-- Minimal footer for GitHub Pages deployment -->
   <footer class="site-footer">
-    <p>&copy; <span id="year"></span> OYSome 4Eva. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="#privacy-policy">Privacy Overview</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
+    <a class="footer-brand" href="index.html" aria-label="OYSome 4Eva home">
+      <img
+        src="assets/branding/oysome-logo-horizontal.png"
+        alt="OYSome 4Eva"
+        class="footer-logo"
+        loading="lazy"
+        decoding="async"
+      >
+    </a>
+    <div class="footer-meta">
+      <p>&copy; <span id="year"></span> OYSome 4Eva. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
     </div>
   </footer>
 
