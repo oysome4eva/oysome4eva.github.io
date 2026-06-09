@@ -1,4 +1,5 @@
 OWNERDOMAIN=oysome4eva.github.io
+google.com, pub-1942524050971620, DIRECT, f08c47fec0942fa0
 adform.com, 2995, RESELLER, 9f5210a2f0999e32
 admixer.net, e58950b9-933f-4f5b-b49c-7ca927540db1, RESELLER
 appads.in, 107139, RESELLER
